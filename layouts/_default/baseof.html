@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-    <head>    
+    <head>
 
         <title>{{ if .Params.seo.title }}{{ $.Params.seo.title }}{{ else }}{{ print print $.Title " | " $.Site.Data.config.title }}{{ end }}</title>
         <meta charset="utf-8">
@@ -27,22 +27,16 @@
         {{ if .Site.Data.config.favicon }}
         <link rel="icon" href="{{ $.Site.Data.config.favicon | relURL }}">
         {{ end }}
-        
+
+        <meta http-equiv="refresh" content="0; URL={{redurl}}" />
+
     </head>
     <body>
-        
-        <div id="site-wrap" class="site">
-        
-          {{ partial "header.html" . }}
-        
-          <main id="content" class="site-content">
-            {{ block "content" . }}{{ end }}
-          </main>
-        
-          {{ partial "footer.html" . }}
-        
+
+
+
         </div>
         <script src="{{ "js/init.js" | relURL }}"></script>
         <script src="{{ "js/page-load.js" | relURL }}"></script>
-    </body> 
+    </body>
 </html>
