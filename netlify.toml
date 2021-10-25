@@ -1,4 +1,6 @@
 [build]
-  publish = "public"
-  command = "hugo --config=config.toml,config.prod.toml"
-  functions = ".netlify/functions"
+publish = "public"
+command = "./stackbit-build.sh"
+
+  [build.environment]
+  HUGO_VERSION = "0.80.0"
